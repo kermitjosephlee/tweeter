@@ -23,12 +23,14 @@ module.exports = function(DataHelpers) {
       return;
     }
 
+    // -- the ? conditional operator on req.body.user  -- in this example, if "true", user = req.body.user -- if false, user = req.body.user : userHelper.generateRandomUser()
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
       user: user,
       content: {
         text: req.body.text
       },
+      // Date.now returns with the number of milliseconds from Jan 1, 1970 0h00:00
       created_at: Date.now()
     };
 
