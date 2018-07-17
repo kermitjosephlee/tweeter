@@ -15,6 +15,7 @@
 .new-tweet div {
   width: 100%;
   height: 60%;
+  padding: 1px;
 }
 
 textarea{
@@ -35,4 +36,5 @@ span {
 .new-tweet footer {
   width: 100%;
   height: 15%;
+  padding: 10px;
 }
