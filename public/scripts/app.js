@@ -1,7 +1,6 @@
 $( document ).ready(function() {
 
-
-  //*******************************************************************
+//*******************************************************************
 
   function createTweetElement (dataObj) {
 
@@ -53,18 +52,33 @@ $( document ).ready(function() {
     }
   }
 
-// listening for submit button click
-
-$("input").click(function(event){
+  $("input").click(function(event){
     const characterCount = $('#textBox').val().length;
     const maxCharaterCount = 140;
+
+    event.preventDefault()
+
     if (characterCount === 0 || characterCount > maxCharaterCount){
-       event.preventDefault();
-       alert("NOPE!");
+      alert("NOPE!");
     } else {
-      console.log($('#textBox').val());
-    }
-});
+
+      const serialStr = $('#form').serialize();
+
+      $.ajax('/tweets', { method: "POST", data: serialStr })
+        .then (function (data, status){
+          console.log("data: ", data + "  status: ", status);
+         // const tempData = createTweetElement(data);
+          renderTweets([data]);
+        })
+
+        // .fail (function ())
+
+
+
+
+      }
+
+  })
 
   function loadTweets() {
     $.ajax("/tweets", { method: "GET" })
@@ -74,8 +88,10 @@ $("input").click(function(event){
       })
       .fail(function (tweetsArray){
         console.log("MASSIVE EXPLOSIONS!!!");
-      });
+      })
   }
+
+
 
 //*******************************************************************
   loadTweets();
