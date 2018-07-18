@@ -29,7 +29,7 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container" id="tweets-container">
+    <main class="container">
       <section class="new-tweet">
         <header>
           <h2> Compose Tweet </h2>
@@ -37,28 +37,24 @@
         <form>
           <textarea id="textBox" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
+
           <span class="counter">140</span>
         </form>
+
+        <p><tt id="results"></tt></p>
+
+        <script>
+          $("input").click(function(event){
+            event.preventDefault();
+            var tempStr = $("form").serialize();
+          };
+        </script>
+
       </section>
 
-      <!-- <article class="posted-tweet">
-        <section>
-          <header>
-            <img src="images/avatarBlank.png">
-            Poster's Name
-            <p class="userHandle">
-              @PostersName
-            </p>
-          </header>
-          <div>
-          This is the first of the following tweets.
-          </div>
-          <footer>
-            XX days ago
-          </footer>
-        </section>
-      </article> -->
-
+      <section id="tweets-container">
+        <!-- created to anchor posted tweets -->
+      </section>
     </main>
 
   <!-- App JS -->

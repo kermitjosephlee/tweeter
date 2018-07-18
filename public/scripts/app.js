@@ -51,6 +51,7 @@ const tweetData = [
   }
 ]
 
+//*******************************************************************
 
 function createTweetElement (dataObj) {
 
@@ -63,7 +64,6 @@ function createTweetElement (dataObj) {
   const createdAt =         dataObj.created_at;
   let   currentTime =       Date.now();
   const timeDelta =         calculateTimeSince(currentTime, createdAt);
-
 
   const $postedTweet =
     `<article class="posted-tweet">
@@ -84,10 +84,7 @@ function createTweetElement (dataObj) {
       </section>
     </article>`
 
-
   return $postedTweet
-  // $('#tweets-container').append($postedTweet)
-
 };
 
 function calculateTimeSince (now, then){
@@ -98,41 +95,15 @@ function calculateTimeSince (now, then){
   return differenceInTime;
 };
 
-
-// takes JSON formatted array of tweets and creates a string that is formatted for appending in HTML
-// function postedTweetsStringMaker(tweetsArray){
-
-//   let masterTweetString = "";
-
-//   for(let i = 0; i < tweetsArray.length; i++){
-//     let $postedTweet = createTweetElement(tweetsArray[i]);
-
-//     console.log(masterTweetString.concat($postedTweet, masterTweetString));
-
-//   }
-
-//   return masterTweetString; //
-// };
-
 function renderTweets(tweetsArray){
 
   let tempStr = "";
   console.log("tweetsArray[0]: " + tweetsArray[0])
 
   for (var tweet in tweetsArray){
-
     let tweetHTML = createTweetElement(tweetsArray[tweet]);
     $('#tweets-container').append(tweetHTML);
-
   }
 }
-// loop through tweets array
-// each objs gen HTML - call createTweetElement
-// store to var
-// append var to tweet container
-// end of loop
-
 
 renderTweets(tweetData);
-
-// $('#tweets-container').append(postedTweetsStringMaker(tweetData));
