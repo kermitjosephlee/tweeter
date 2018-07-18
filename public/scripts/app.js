@@ -99,6 +99,35 @@ $( document ).ready(function() {
     }
   }
 
+
+// listening for submit button click
+
+$("input").click(function(event){
+    const characterCount = $('#textBox').val().length;
+    const maxCharaterCount = 140;
+    if (characterCount === 0 || characterCount > maxCharaterCount){
+       event.preventDefault();
+       console.log("NOPE!");
+    } else {
+      console.log($('#textBox').val());
+    }
+});
+
+
+
+
+
+
+  // function formValidator (){
+
+  //   const tempStr = $("form").serialize();
+
+  //   $.post("/tweets", tempStr, function(data, status){
+  //       $
+  //   })
+
+  // }
+
   function loadTweets() {
     $.ajax("/tweets", { method: "GET" })
 
@@ -110,12 +139,19 @@ $( document ).ready(function() {
       });
   }
 
+  // Form Validation Logic
+  // $('#textBox').on('input', function(){
+  //   var textAreaLength = $('#textBox').val().length;
+  //   var maxCharacters = 140;
 
-
+  //   if (textAreaLength === null || textAreaLength > maxCharacters){
+  //     $("input").click(function(event){
+  //           event.preventDefault();
+  //   })};
+  // });
 //*******************************************************************
-
-  renderTweets(tweetData);
   loadTweets();
+
 
 
 
