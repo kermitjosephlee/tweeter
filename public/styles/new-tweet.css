@@ -2,6 +2,8 @@
   border: 3px solid black;
   padding: 13px;
   border-radius: 5px;
+  margin-bottom: 40px;
+  background-color: white;
 }
 
 .new-tweet header {
@@ -20,6 +22,63 @@ textarea{
 
 form {
   margin-bottom: 9px;
+}
+
+article {
+  border: 3px solid black;
+  padding: 13px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  color : black;
+  background-color: white;
+}
+
+article header {
+  background-color: #eee;
+  padding: 3px;
+  padding-bottom: 24px;
+  border-radius: 5px;
+  min-height: 40px;
+}
+
+article header img {
+  padding: 3px;
+  float: left;
+}
+
+article header p {
+  float: right;
+  margin: 0;
+  font-size: 10px;
+  font-color: grey;
+}
+
+article section {
+  border: 1px solid black;
+  border-radius: 5px;
+  min-height: 80px;
+  filter: opacity(0.50);
+}
+
+article section:hover{
+  filter: opacity(1);
+}
+
+article div {
+  min-height: 80px;
+  border-bottom: 2px;
+  padding: 10px;
+  margin: 0px;
+}
+
+article footer{
+  background-color: #eee;
+  border-top: 2px;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 10px;
+  margin: 0;
+
 }
 
 span {
