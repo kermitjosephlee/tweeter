@@ -18,9 +18,6 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -32,7 +29,7 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="container" id="tweets-container">
       <section class="new-tweet">
         <header>
           <h2> Compose Tweet </h2>
@@ -44,7 +41,7 @@
         </form>
       </section>
 
-      <article class="posted-tweet">
+      <!-- <article class="posted-tweet">
         <section>
           <header>
             <img src="images/avatarBlank.png">
@@ -60,9 +57,13 @@
             XX days ago
           </footer>
         </section>
-      </article>
+      </article> -->
 
     </main>
+
+  <!-- App JS -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   </body>
 </html>
