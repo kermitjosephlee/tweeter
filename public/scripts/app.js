@@ -54,7 +54,7 @@ $( document ).ready(function() {
     let tempStr = "";
     for (var tweet in tweetsArray){
       let tweetHTML = createTweetElement(tweetsArray[tweet]);
-      $('#tweets-container').append(tweetHTML);
+      $('#tweets-container').prepend(tweetHTML);
     }
   }
 
@@ -79,11 +79,7 @@ $( document ).ready(function() {
 
         // .fail (function ())
 
-
-
-
       }
-
   })
 
   function loadTweets() {
@@ -97,12 +93,8 @@ $( document ).ready(function() {
       })
   }
 
-
-
 //*******************************************************************
   loadTweets();
-
-
 
 
 });// closes document ready
