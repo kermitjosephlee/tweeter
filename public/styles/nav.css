@@ -9,6 +9,7 @@
   color: #e8fdff;
   padding: 0 2em 0 2em;
   display: inline-block;
+  z-index: 100;
 }
 
 #nav-bar .logo {
@@ -22,4 +23,22 @@
   float: left;
   line-height: 80px;
   font-size: 225%;
+}
+
+#nav-bar .composeButton {
+  display: inline-block;
+  float: right;
+  padding: 10px;
+  margin: 19px;
+  border-radius: 5px;
+  background-color: #a03700;
+  filter: opacity(0.66);
+}
+
+#nav-bar .composeButton:hover {
+  filter: opacity(1);
+}
+
+#nav-bar .composeButton .composeText {
+  margin-right: 5px;
 }

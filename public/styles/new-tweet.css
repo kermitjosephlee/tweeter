@@ -1,6 +1,6 @@
 .new-tweet {
   border: 3px solid black;
-  padding: 13px;
+  padding: 13px 13px 0px 13px;
   border-radius: 5px;
   margin-bottom: 40px;
   background-color: white;
@@ -18,10 +18,15 @@
 textarea{
   width: 100%;
   padding: 10px;
+  margin-bottom: 5px;
 }
 
 form {
   margin-bottom: 9px;
+}
+
+form span {
+  float: right;
 }
 
 article {
@@ -34,23 +39,36 @@ article {
 }
 
 article header {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
   background-color: #eee;
   padding: 3px;
-  padding-bottom: 24px;
   border-radius: 5px;
   min-height: 40px;
 }
 
 article header img {
+  order: 0;
   padding: 3px;
   float: left;
 }
 
-article header p {
-  float: right;
+.userName{
+  order: 1;
+  flex-grow: 3;
+  padding-left: 10px;
+  font-size: 22px;
   margin: 0;
-  font-size: 10px;
-  font-color: grey;
+}
+
+.userHandle {
+  order: 2;
+  flex-shrink: 1;
+  margin: 0;
+  font-size: 12px;
+  padding-right: 10px;
+  font-style: italic;
 }
 
 article section {
@@ -78,9 +96,9 @@ article footer{
   padding: 10px;
   font-size: 10px;
   margin: 0;
-
 }
 
-span {
+article footer span {
   float: right;
+  font-size: 12px;
 }

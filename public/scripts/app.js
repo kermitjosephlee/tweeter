@@ -19,16 +19,20 @@ $( document ).ready(function() {
         <section>
           <header>
             <img src=${userAvatarSmall}>
-            ${userName}
-            <p class="userHandle">
-            ${userHandle}
-            </p>
+            <p class="userName">${userName}</p>
+            <p class="userHandle">${userHandle}</p>
           </header>
           <div>
             ${escape(content)}
           </div>
           <footer>
             ${timeDelta} days ago
+            <span>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-share"></i>
+              <i class="far fa-star"></i>
+            </span>
           </footer>
         </section>
       </article>`
