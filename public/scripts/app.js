@@ -25,7 +25,7 @@ $( document ).ready(function() {
             </p>
           </header>
           <div>
-            ${content}
+            ${escape(content)}
           </div>
           <footer>
             ${timeDelta} days ago
@@ -34,6 +34,12 @@ $( document ).ready(function() {
       </article>`
 
     return $postedTweet
+  };
+
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   };
 
   function calculateTimeSince (now, then){
