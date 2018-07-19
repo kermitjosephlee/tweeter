@@ -62,6 +62,9 @@ $( document ).ready(function() {
     }
   }
 
+// listens for input click then checks to see if text length is more than 0 and less than max count
+// if satisfied, serializes string, and POSTs string to /tweets
+// sends the returning data array to function renderTweets
   $("input").click(function(event){
     const characterCount = $('#textBox').val().length;
     const maxCharaterCount = 140;
@@ -76,14 +79,21 @@ $( document ).ready(function() {
 
       $.ajax('/tweets', { method: "POST", data: serialStr })
         .then (function (data, status){
-          console.log("data: ", data + "  status: ", status);
-         // const tempData = createTweetElement(data);
           renderTweets([data]);
         })
 
         // .fail (function ())
 
       }
+  })
+
+  // initizes the hiding of the tweet composition box
+  $(".new-tweet").hide();
+
+  // slow animates the new-tweet box when the compose button is clicked
+  $(".composeButton").click(function(event){
+    $(".new-tweet").toggle("slow");
+    $("#textBox").focus();
   })
 
   function loadTweets() {
