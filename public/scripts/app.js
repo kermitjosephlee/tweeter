@@ -75,14 +75,15 @@ $( document ).ready(function() {
       $(".new-tweet footer div").slideDown("slow");
     } else {
 
+      $(".new-tweet footer div").hide();
+
       const serialStr = $('#form').serialize();
 
       $.ajax('/tweets', { method: "POST", data: serialStr })
         .then (function (data, status){
           renderTweets([data]);
         })
-
-        // .fail (function ())
+        // .fail (function )
 
       }
   })
@@ -98,6 +99,11 @@ $( document ).ready(function() {
     $(".new-tweet").toggle("slow");
     // $("#textBox").focus();
   })
+
+  // // clicks on the icon SHOULD update and return to page - DOESN'T WORK YET
+  // $("#nav-bar").click(function(event){
+  //   loadTweets();
+  // })
 
 
 
