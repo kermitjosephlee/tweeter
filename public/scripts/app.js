@@ -72,7 +72,7 @@ $( document ).ready(function() {
     event.preventDefault()
 
     if (characterCount === 0 || characterCount > maxCharaterCount){
-      alert("NOPE!");
+      $(".new-tweet footer div").slideDown("slow");
     } else {
 
       const serialStr = $('#form').serialize();
@@ -87,14 +87,19 @@ $( document ).ready(function() {
       }
   })
 
-  // initizes the hiding of the tweet composition box
+  // initializes the hiding of the tweet composition box
   $(".new-tweet").hide();
+
+  // initializes the hiding of the error message
+  $(".new-tweet footer div").hide();
 
   // slow animates the new-tweet box when the compose button is clicked
   $(".composeButton").click(function(event){
     $(".new-tweet").toggle("slow");
-    $("#textBox").focus();
+    // $("#textBox").focus();
   })
+
+
 
   function loadTweets() {
     $.ajax("/tweets", { method: "GET" })

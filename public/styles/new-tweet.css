@@ -21,11 +21,19 @@ textarea{
   margin-bottom: 5px;
 }
 
-form {
-  margin-bottom: 9px;
+.new-tweet footer{
+  padding-bottom: 7px;
 }
 
-form span {
+/*the error message*/
+.new-tweet footer div{
+  display: inline;
+  color: #db0022;
+  padding-left: 10px
+  margin: 0;
+}
+
+.new-tweet footer span {
   float: right;
 }
 
