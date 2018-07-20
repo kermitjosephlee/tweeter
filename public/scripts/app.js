@@ -12,7 +12,7 @@ $( document ).ready(function() {
     const content =           dataObj.content.text;
     const createdAt =         dataObj.created_at;
     let   currentTime =       Date.now();
-    const timeDelta =         calculateTimeSince(currentTime, createdAt);
+    const timeDelta =         timeUnitMaker(currentTime, createdAt);
 
     const $postedTweet =
       `<article class="posted-tweet">
@@ -26,7 +26,7 @@ $( document ).ready(function() {
             ${escape(content)}
           </div>
           <footer>
-            ${timeDelta} days ago
+            ${timeDelta}
             <span>
               <i class="far fa-heart"></i>
               <i class="fas fa-retweet"></i>
@@ -45,12 +45,30 @@ $( document ).ready(function() {
     return div.innerHTML;
   };
 
-  function calculateTimeSince (now, then){
-    let differenceInTimeInMilliSec = now - then; // in milliseconds
-    const oneDay = 1000 * 60 * 60 * 24;
-    const differenceInTime = Math.round(differenceInTimeInMilliSec/oneDay)
+  function timeUnitMaker (now, then) {
 
-    return differenceInTime;
+    const timeElasped = now - then;
+    const timeUnitObj = {week: 604800000, day: 86400000, hour: 3600000,minute: 60000, second: 1000,};
+    let timeUnitName = "";
+    let timeUnitDenominator;
+
+    for (unit in timeUnitObj){
+      if (timeElasped > timeUnitObj[unit]){
+        timeUnitName = unit;
+        console.log("timeUnitObj[unit]: ", timeUnitObj[unit])
+        timeUnitDenominator = timeUnitObj[unit];
+        break;
+      }
+    }
+
+    const formattedTime = Math.round(timeElasped / timeUnitDenominator);
+
+    if (formattedTime > 1){
+      timeUnitName = timeUnitName + "s"
+    }
+
+    const returnStr = "posted " + formattedTime + " " + timeUnitName + " ago"
+    return returnStr;
   };
 
   function renderTweets(tweetsArray){
