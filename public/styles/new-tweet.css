@@ -86,7 +86,7 @@ article section {
   filter: opacity(0.50);
 }
 
-article section:hover{
+article section:hover {
   filter: opacity(1);
 }
 
@@ -97,7 +97,7 @@ article div {
   margin: 0px;
 }
 
-article footer{
+article footer {
   background-color: #eee;
   border-top: 2px;
   border-radius: 5px;
@@ -110,3 +110,16 @@ article footer span {
   float: right;
   font-size: 12px;
 }
+
+article footer span i.far.fa-heart:hover {
+  color: red;
+}
+
+article footer span i.fas.fa-retweet:hover {
+  color: red;
+}
+
+article footer span i.fas.fa-share:hover {
+  color: red;
+}
+

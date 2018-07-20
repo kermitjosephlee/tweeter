@@ -31,7 +31,6 @@ $( document ).ready(function() {
               <i class="far fa-heart"></i>
               <i class="fas fa-retweet"></i>
               <i class="fas fa-share"></i>
-              <i class="far fa-star"></i>
             </span>
           </footer>
         </section>
