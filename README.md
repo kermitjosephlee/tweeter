@@ -26,3 +26,7 @@ This project was my first introduction to CSS and UX in general. Along with conn
   "devDependencies": {
     "nodemon": "^1.18.2"
   }
+
+## Screenshots
+
+!["Screenshot of tweet front page"](https://github.com/kermitjosephlee/tweeter/blob/master/docs/tweet-box.png?raw=true)
