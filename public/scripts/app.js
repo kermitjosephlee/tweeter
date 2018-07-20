@@ -46,7 +46,6 @@ $( document ).ready(function() {
   };
 
   function timeUnitMaker (now, then) {
-
     const timeElasped = now - then;
     const timeUnitObj = {week: 604800000, day: 86400000, hour: 3600000,minute: 60000, second: 1000,};
     let timeUnitName = "";
@@ -55,7 +54,6 @@ $( document ).ready(function() {
     for (unit in timeUnitObj){
       if (timeElasped > timeUnitObj[unit]){
         timeUnitName = unit;
-        console.log("timeUnitObj[unit]: ", timeUnitObj[unit])
         timeUnitDenominator = timeUnitObj[unit];
         break;
       }
@@ -100,8 +98,6 @@ $( document ).ready(function() {
         .then (function (data, status){
           renderTweets([data]);
         })
-        // .fail (function )
-
       }
   })
 
@@ -114,15 +110,7 @@ $( document ).ready(function() {
   // slow animates the new-tweet box when the compose button is clicked
   $(".composeButton").click(function(event){
     $(".new-tweet").toggle("slow");
-    // $("#textBox").focus();
   })
-
-  // // clicks on the icon SHOULD update and return to page - DOESN'T WORK YET
-  // $("#nav-bar").click(function(event){
-  //   loadTweets();
-  // })
-
-
 
   function loadTweets() {
     $.ajax("/tweets", { method: "GET" })
@@ -138,5 +126,4 @@ $( document ).ready(function() {
 //*******************************************************************
   loadTweets();
 
-
-});// closes document ready
+});
