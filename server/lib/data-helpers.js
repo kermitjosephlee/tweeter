@@ -8,6 +8,7 @@ module.exports = function makeDataHelpers(db) {
   return {
 
     // Saves a tweet to `db`
+    // mongo save tweets
     saveTweet: function(newTweet, callback) {
       simulateDelay(() => {
         db.tweets.push(newTweet);
@@ -15,6 +16,8 @@ module.exports = function makeDataHelpers(db) {
       });
     },
 
+
+    // mongo get tweet statements
     // Get all tweets in `db`, sorted by newest first
     getTweets: function(callback) {
       simulateDelay(() => {
